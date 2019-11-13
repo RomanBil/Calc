@@ -12,11 +12,19 @@ namespace Calc
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] str)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            try
+            {
+                Application.Run(new Form1(str[0]));
+            }
+
+            catch(IndexOutOfRangeException)
+            {
+                Application.Run(new Form1("Error"));
+            }
         }
     }
 }
