@@ -35,12 +35,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonBackspace = new System.Windows.Forms.Button();
-            this.buttonC = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonBracket1 = new System.Windows.Forms.Button();
             this.buttonBracket2 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonBackspace = new System.Windows.Forms.Button();
+            this.buttonC = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,14 +63,13 @@
             this.buttonMultiply = new System.Windows.Forms.Button();
             this.buttonMinus = new System.Windows.Forms.Button();
             this.buttonPlus = new System.Windows.Forms.Button();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -154,6 +154,61 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Editing";
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel4, 2, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(407, 45);
+            this.tableLayoutPanel6.TabIndex = 2;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.buttonBracket1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.buttonBracket2, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(116, 39);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // buttonBracket1
+            // 
+            this.buttonBracket1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonBracket1.Location = new System.Drawing.Point(3, 3);
+            this.buttonBracket1.Name = "buttonBracket1";
+            this.buttonBracket1.Size = new System.Drawing.Size(52, 33);
+            this.buttonBracket1.TabIndex = 0;
+            this.buttonBracket1.Tag = "(";
+            this.buttonBracket1.Text = "(";
+            this.buttonBracket1.UseVisualStyleBackColor = true;
+            this.buttonBracket1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonBracket2
+            // 
+            this.buttonBracket2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonBracket2.Location = new System.Drawing.Point(61, 3);
+            this.buttonBracket2.Name = "buttonBracket2";
+            this.buttonBracket2.Size = new System.Drawing.Size(52, 33);
+            this.buttonBracket2.TabIndex = 1;
+            this.buttonBracket2.Tag = ")";
+            this.buttonBracket2.Text = ")";
+            this.buttonBracket2.UseVisualStyleBackColor = true;
+            this.buttonBracket2.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
@@ -179,6 +234,7 @@
             this.buttonBackspace.TabIndex = 0;
             this.buttonBackspace.Text = "Backspace";
             this.buttonBackspace.UseVisualStyleBackColor = true;
+            this.buttonBackspace.Click += new System.EventHandler(this.buttonBackspace_Click);
             // 
             // buttonC
             // 
@@ -190,41 +246,7 @@
             this.buttonC.TabIndex = 1;
             this.buttonC.Text = "C";
             this.buttonC.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.buttonBracket1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.buttonBracket2, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(116, 39);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // buttonBracket1
-            // 
-            this.buttonBracket1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonBracket1.Location = new System.Drawing.Point(3, 3);
-            this.buttonBracket1.Name = "buttonBracket1";
-            this.buttonBracket1.Size = new System.Drawing.Size(52, 33);
-            this.buttonBracket1.TabIndex = 0;
-            this.buttonBracket1.Text = "(";
-            this.buttonBracket1.UseVisualStyleBackColor = true;
-            // 
-            // buttonBracket2
-            // 
-            this.buttonBracket2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonBracket2.Location = new System.Drawing.Point(61, 3);
-            this.buttonBracket2.Name = "buttonBracket2";
-            this.buttonBracket2.Size = new System.Drawing.Size(52, 33);
-            this.buttonBracket2.TabIndex = 1;
-            this.buttonBracket2.Text = ")";
-            this.buttonBracket2.UseVisualStyleBackColor = true;
+            this.buttonC.Click += new System.EventHandler(this.buttonC_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -273,8 +295,10 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(62, 62);
             this.button1.TabIndex = 0;
+            this.button1.Tag = "1";
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -283,8 +307,10 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(62, 62);
             this.button2.TabIndex = 1;
+            this.button2.Tag = "2";
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -293,8 +319,10 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(62, 62);
             this.button3.TabIndex = 2;
+            this.button3.Tag = "3";
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -303,8 +331,10 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(62, 62);
             this.button4.TabIndex = 3;
+            this.button4.Tag = "4";
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 
@@ -313,8 +343,10 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(62, 62);
             this.button5.TabIndex = 4;
+            this.button5.Tag = "5";
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button1_Click);
             // 
             // button6
             // 
@@ -323,8 +355,10 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(62, 62);
             this.button6.TabIndex = 5;
+            this.button6.Tag = "6";
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button1_Click);
             // 
             // button7
             // 
@@ -333,8 +367,10 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(62, 62);
             this.button7.TabIndex = 6;
+            this.button7.Tag = "7";
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button1_Click);
             // 
             // button8
             // 
@@ -343,8 +379,10 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(62, 62);
             this.button8.TabIndex = 7;
+            this.button8.Tag = "8";
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button1_Click);
             // 
             // button9
             // 
@@ -353,8 +391,10 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(62, 62);
             this.button9.TabIndex = 8;
+            this.button9.Tag = "9";
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button1_Click);
             // 
             // button0
             // 
@@ -363,8 +403,10 @@
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(62, 64);
             this.button0.TabIndex = 9;
+            this.button0.Tag = "0";
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
+            this.button0.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonSum
             // 
@@ -395,8 +437,10 @@
             this.buttonMod.Name = "buttonMod";
             this.buttonMod.Size = new System.Drawing.Size(62, 64);
             this.buttonMod.TabIndex = 12;
+            this.buttonMod.Tag = "%";
             this.buttonMod.Text = "mod";
             this.buttonMod.UseVisualStyleBackColor = true;
+            this.buttonMod.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonMC
             // 
@@ -439,8 +483,10 @@
             this.buttonDivide.Name = "buttonDivide";
             this.buttonDivide.Size = new System.Drawing.Size(62, 62);
             this.buttonDivide.TabIndex = 16;
+            this.buttonDivide.Tag = "/";
             this.buttonDivide.Text = "/";
             this.buttonDivide.UseVisualStyleBackColor = true;
+            this.buttonDivide.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonMultiply
             // 
@@ -450,8 +496,10 @@
             this.buttonMultiply.Name = "buttonMultiply";
             this.buttonMultiply.Size = new System.Drawing.Size(62, 62);
             this.buttonMultiply.TabIndex = 17;
+            this.buttonMultiply.Tag = "*";
             this.buttonMultiply.Text = "*";
             this.buttonMultiply.UseVisualStyleBackColor = true;
+            this.buttonMultiply.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonMinus
             // 
@@ -461,8 +509,10 @@
             this.buttonMinus.Name = "buttonMinus";
             this.buttonMinus.Size = new System.Drawing.Size(62, 62);
             this.buttonMinus.TabIndex = 18;
+            this.buttonMinus.Tag = "-";
             this.buttonMinus.Text = "-";
             this.buttonMinus.UseVisualStyleBackColor = true;
+            this.buttonMinus.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonPlus
             // 
@@ -472,24 +522,10 @@
             this.buttonPlus.Name = "buttonPlus";
             this.buttonPlus.Size = new System.Drawing.Size(62, 64);
             this.buttonPlus.TabIndex = 19;
+            this.buttonPlus.Tag = "+";
             this.buttonPlus.Text = "+";
             this.buttonPlus.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel4, 2, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(407, 45);
-            this.tableLayoutPanel6.TabIndex = 2;
+            this.buttonPlus.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -503,10 +539,10 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

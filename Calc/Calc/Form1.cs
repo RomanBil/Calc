@@ -65,5 +65,23 @@ namespace Calc
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += (sender as Button).Tag;
+        }
+
+        private void buttonBackspace_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length > 0)
+            {
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
+            }
+        }
+
+        private void buttonC_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = string.Empty;
+        }
     }
 }
