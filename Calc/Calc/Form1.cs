@@ -12,40 +12,51 @@ namespace Calc
 {
     public partial class Form1 : Form
     {
-        public Form1(string str)
+        private int memory = 0;
+
+        private globalKeyboardHook gkh = new globalKeyboardHook();
+
+        private bool? check(string str)
         {
-            InitializeComponent();
+            bool? test = true;
 
-            if (str != "Error")
+            for (int i = 0; i < str.Length; i++)
             {
-                bool? test = true;
-
-                for (int i = 0; i < str.Length; i++)
+                if (char.IsDigit(str[i]) || str[i] == '+' || str[i] == '-' ||
+                    str[i] == '*' || str[i] == '/' || str[i] == '%' || str[i] == '=')
                 {
-                    if (char.IsDigit(str[i]) || str[i] == '+' || str[i] == '-' ||
-                        str[i] == '*' || str[i] == '/' || str[i] == '%' || str[i] == '=')
-                    {
 
+                }
+
+                else
+                {
+                    test = false;
+                }
+
+                if (str[i] == '=')
+                {
+                    if (i == str.Length - 1)
+                    {
+                        test = null;
                     }
 
                     else
                     {
                         test = false;
                     }
-
-                    if (str[i] == '=')
-                    {
-                        if (i == str.Length - 1)
-                        {
-                            test = null;
-                        }
-
-                        else
-                        {
-                            test = false;
-                        }
-                    }
                 }
+            }
+
+            return test;
+        }
+
+        public Form1(string str)
+        {
+            InitializeComponent();
+
+            if (str != "Error")
+            {
+                bool? test = check(str);
 
                 if (test == true)
                 {
@@ -54,7 +65,7 @@ namespace Calc
 
                 if (test == false)
                 {
-                    MessageBox.Show("Error!Incorrect entry");
+                    textBox2.Text = "Error!Incorrect entry";
                 }
 
                 if (test == null)
@@ -63,6 +74,25 @@ namespace Calc
 
                     //=
                 }
+            }
+
+            gkh.HookedKeys.Add(Keys.Enter);
+
+            gkh.HookedKeys.Add(Keys.Escape);
+
+            gkh.KeyUp += new KeyEventHandler(gkh_KeyUp);
+        }
+
+        private void gkh_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSum_Click(sender, new EventArgs());
+            }
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
             }
         }
 
@@ -82,6 +112,36 @@ namespace Calc
         private void buttonC_Click(object sender, EventArgs e)
         {
             textBox1.Text = string.Empty;
+        }
+
+        private void buttonMPlus_Click(object sender, EventArgs e)
+        {
+            bool? test = check(textBox1.Text);
+
+            if (test == false)
+            {
+                textBox2.Text = "Неможливо перетворити до числа";
+            }
+
+            else
+            {
+                memory += Convert.ToInt32(textBox2.Text);//suma
+            }
+        }
+
+        private void buttonMC_Click(object sender, EventArgs e)
+        {
+            memory = 0;
+        }
+
+        private void buttonMR_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += memory;
+        }
+
+        private void buttonSum_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "test";
         }
     }
 }

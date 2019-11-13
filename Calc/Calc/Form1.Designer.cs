@@ -105,6 +105,7 @@
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBox2.Location = new System.Drawing.Point(73, 50);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(337, 20);
             this.textBox2.TabIndex = 3;
             // 
@@ -416,8 +417,9 @@
             this.buttonSum.Name = "buttonSum";
             this.buttonSum.Size = new System.Drawing.Size(67, 64);
             this.buttonSum.TabIndex = 10;
-            this.buttonSum.Text = "=";
+            this.buttonSum.Text = "  =";
             this.buttonSum.UseVisualStyleBackColor = true;
+            this.buttonSum.Click += new System.EventHandler(this.buttonSum_Click);
             // 
             // buttonPlusOrMinus
             // 
@@ -452,6 +454,7 @@
             this.buttonMC.TabIndex = 13;
             this.buttonMC.Text = "MC";
             this.buttonMC.UseVisualStyleBackColor = true;
+            this.buttonMC.Click += new System.EventHandler(this.buttonMC_Click);
             // 
             // buttonMPlus
             // 
@@ -463,6 +466,7 @@
             this.buttonMPlus.TabIndex = 14;
             this.buttonMPlus.Text = "M+";
             this.buttonMPlus.UseVisualStyleBackColor = true;
+            this.buttonMPlus.Click += new System.EventHandler(this.buttonMPlus_Click);
             // 
             // buttonMR
             // 
@@ -474,6 +478,7 @@
             this.buttonMR.TabIndex = 15;
             this.buttonMR.Text = "MR";
             this.buttonMR.UseVisualStyleBackColor = true;
+            this.buttonMR.Click += new System.EventHandler(this.buttonMR_Click);
             // 
             // buttonDivide
             // 
