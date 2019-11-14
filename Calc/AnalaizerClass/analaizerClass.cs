@@ -37,6 +37,7 @@ namespace AnalaizerClass
                         return false;
                     }
 
+                    
                     bracket1++;
 
                     error = i;
