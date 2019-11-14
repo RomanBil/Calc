@@ -188,6 +188,7 @@ namespace CalcClass
         public static string lastError
         {
             get { return _lastError; }
+
             set { _lastError = value; }
         }
 
