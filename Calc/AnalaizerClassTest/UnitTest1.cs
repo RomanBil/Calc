@@ -14,7 +14,7 @@ namespace AnalaizerClassTest
 
             Assert.AreEqual(true, analaizerClass.CheckCurrency());
 
-            //Assert.AreEqual(5, analaizerClass.Erposition);
+            ///Assert.AreEqual(5, analaizerClass.Erposition);
         }
     }
 }
