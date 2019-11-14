@@ -24,6 +24,7 @@ namespace CalcClass
             }
             else return res;
 
+
         }
 
         /// <summary> 
