@@ -8,23 +8,43 @@ namespace CalcClass
 {
     public class CalcClas
     {
+        private static int CheckError06(long res)
+        {
+            if (-2147483648 < res || res > 2147483647)
+            {
+                lastError = "Error";
+                return -1;
+            }
+
+            return 1;
+        }
+
         /// <summary> 
         /// Функція складання числа а і b 
         /// </summary> 
         /// <param name="a">доданок</param> 
         /// <param name="b">доданок</param> 
         /// <returns>сума</returns> 
-        public static int Add(long а, long b)
+        public static int Add(long a, long b)
         {
-            int res = (int)(а + b);
-            if (-2147483648 < res || res > 2147483647)
+            if (CheckError06(a) == -1)
             {
-                lastError = "Error";
-                return 0;
+                return -1;
             }
-            else return res;
 
+            if (CheckError06(b) == -1)
+            {
+                return -1;
+            }
 
+            long res = (a + b);
+
+            if (CheckError06(res) == -1)
+            {
+                return -1;
+            }
+
+            return (int)res;
         }
 
         /// <summary> 
@@ -33,7 +53,27 @@ namespace CalcClass
         /// <param name="a">зменшуване</param> 
         /// <param name="b">від’ємне</param> 
         /// <returns>різниця</returns> 
-        public static int Sub(long а, long b) { return (int)(а - b); }
+        public static int Sub(long a, long b)
+        {
+            if (CheckError06(a) == -1)
+            {
+                return -1;
+            }
+
+            if (CheckError06(b) == -1)
+            {
+                return -1;
+            }
+
+            long res = (a - b);
+
+            if (CheckError06(res) == -1)
+            {
+                return -1;
+            }
+
+            return (int)res;
+        }
 
 
         /// <summary> 
@@ -42,7 +82,27 @@ namespace CalcClass
         /// <param name="a">множник</param> 
         /// <param name="b">множник</param> 
         /// <returns>добуток</returns> 
-        public static int Mult(long а, long b) { return (int)(а * b); }
+        public static int Mult(long a, long b)
+        {
+            if (CheckError06(a) == -1)
+            {
+                return -1;
+            }
+
+            if (CheckError06(b) == -1)
+            {
+                return -1;
+            }
+
+            long res = (a * b);
+
+            if (CheckError06(res) == -1)
+            {
+                return -1;
+            }
+
+            return (int)res;
+        }
 
         /// <summary> 
         /// функція знаходження частки 
@@ -50,7 +110,27 @@ namespace CalcClass
         /// <param name="a">ділене</param> 
         /// <param name="b">дільник</param> 
         /// <returns>частка</returns> 
-        public static int Div(long а, long b) { return (int)(а / b); }
+        public static int Div(long a, long b)
+        {
+            if (CheckError06(a) == -1)
+            {
+                return -1;
+            }
+
+            if (CheckError06(b) == -1)
+            {
+                return -1;
+            }
+
+            long res = (a / b);
+
+            if (CheckError06(res) == -1)
+            {
+                return -1;
+            }
+
+            return (int)res;
+        }
 
         /// <summary> 
         /// функція ділення по модулю 
@@ -58,11 +138,26 @@ namespace CalcClass
         /// <param name="a">ділене</param> 
         /// <param name="b">дільник</param> 
         /// <returns>остача</returns> 
-        public static long Mod(long а, long b)
+        public static long Mod(long a, long b)
         {
-            ////if (a == b) return 0;
-            ////if (a < b) return a;
-            return (int)(а % b);
+            if (CheckError06(a) == -1)
+            {
+                return -1;
+            }
+
+            if (CheckError06(b) == -1)
+            {
+                return -1;
+            }
+
+            long res = (a % b);
+
+            if (CheckError06(res) == -1)
+            {
+                return -1;
+            }
+
+            return (int)res;
         }
 
 
