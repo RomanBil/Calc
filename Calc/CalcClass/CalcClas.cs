@@ -166,14 +166,28 @@ namespace CalcClass
         /// </summary> 
         /// <param name="a"></param> 
         /// <returns></returns> 
-        public static int ABS(long а) { return 1; }
+        public static int ABS(long a)
+        {
+            if (CheckError06(a) == -1)
+            {
+                return -1;
+            }
+            return (int)a*-1;
+        }
 
         /// <summary> 
         /// унарний мінус  
         /// </summary> 
         /// <param name="a"></param> 
         /// <returns></returns> 
-        public static int IABS(long а) { return 1; }
+        public static int IABS(long a)
+        {
+            if (CheckError06(a) == -1)
+            {
+                return -1;
+            }
+            return (int)a * -1;
+        }
 
 
         ////Використовується також глобальна змінна: 
