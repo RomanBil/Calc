@@ -50,7 +50,7 @@ namespace CalcClass
         public static long Mod(long а, long b)
         {
             ////if (a == b) return 0;
-            ////if (a < b) return 2;
+            ////if (a < b) return a;
             return (int)(а % b);
         }
 
@@ -77,11 +77,15 @@ namespace CalcClass
         /// </summary> 
         private static string _lastError = "";
 
-        public static string lastError;
+        ///public static string lastError
 
+        public static string lastError
+        {
+            get { return _lastError; }
+            set { _lastError = value; }
+        }
 
-
-
+       
 
     }
 }
