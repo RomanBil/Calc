@@ -8,11 +8,25 @@ namespace CalcClass
 {
     public class CalcClas
     {
+
+        private static int CheckError09(long res)
+        {
+            if (res == 0) 
+            {
+                lastError = "Error 09";
+                return -1;
+            }
+
+            return 1;
+        }
+
+
+
         private static int CheckError06(long res)
         {
             if (-2147483648 < res || res > 2147483647)
             {
-                lastError = "Error";
+                lastError = "Error 06";
                 return -1;
             }
 
@@ -112,6 +126,13 @@ namespace CalcClass
         /// <returns>частка</returns> 
         public static int Div(long a, long b)
         {
+            if (CheckError09(b) == -1)
+            {
+                return -1;
+            }
+
+
+
             if (CheckError06(a) == -1)
             {
                 return -1;
@@ -140,6 +161,11 @@ namespace CalcClass
         /// <returns>остача</returns> 
         public static long Mod(long a, long b)
         {
+            if (CheckError09(b) == -1)
+            {
+                return -1;
+            }
+
             if (CheckError06(a) == -1)
             {
                 return -1;
