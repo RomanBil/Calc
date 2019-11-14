@@ -14,7 +14,18 @@ namespace CalcClass
         /// <param name="a">доданок</param> 
         /// <param name="b">доданок</param> 
         /// <returns>сума</returns> 
-        public static int Add(long а, long b) { return (int)(а + b); }
+        public static int Add(long а, long b)
+        {
+            int res = (int)(а + b);
+            if (-2147483648 < res || res > 2147483647)
+            {
+                lastError = "Error";
+                return 0;
+            }
+            else return res;
+
+
+        }
 
         /// <summary> 
         /// функція віднімання чисел а і b 

@@ -10,7 +10,7 @@ namespace CalcClassTest
         [TestMethod]
         public void TestMethodAdd()
         {                      
-            Assert.AreEqual(5.0, CalcClas.Add(2, 3));
+            Assert.AreEqual(0, CalcClas.Add(2, 2147483649));
         }
 
 
