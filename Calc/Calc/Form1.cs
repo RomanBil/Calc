@@ -15,6 +15,16 @@ namespace Calc
     {
         private int memory = 0;
 
+        public string express
+        {
+            set
+            {
+                textBox1.Text = value;
+                AnalaizerClass.expression = value;
+                button1_Click(null, null);
+            }
+        }
+
         private globalKeyboardHook gkh = new globalKeyboardHook();
 
         private bool? check(string str)
@@ -62,6 +72,8 @@ namespace Calc
                 if (test == true)
                 {
                     textBox1.Text = str;
+
+                    AnalaizerClass.expression = str;
                 }
 
                 if (test == false)
@@ -124,25 +136,41 @@ namespace Calc
 
         private void buttonMPlus_Click(object sender, EventArgs e)
         {
-            bool? test = check(textBox1.Text);
-
-            if (test == false)
+            AnalaizerClass.expression = textBox1.Text;
+            string temp = AnalaizerClass.Estimate();
+            if (!AnalaizerClass.ShowMessage)
             {
-                textBox2.Text = "Неможливо перетворити до числа";
+                textBox2.Text = temp;
             }
-
             else
             {
-                try
-                {
-                    memory += Convert.ToInt32(textBox2.Text);//suma
-                }
-
-                catch (FormatException)
-                {
-                    memory += 0;
-                }
+                textBox1.Text = "";
+                memory = Int32.Parse(temp);
+                textBox2.Text = memory.ToString() + "  додано в пам'ять!!! ";
             }
+            AnalaizerClass.ShowMessage = true;
+            AnalaizerClass.expression = "";
+            AnalaizerClass.erposition = -1;
+
+            //bool? test = check(textBox1.Text);
+
+            //if (test == false)
+            //{
+            //    textBox2.Text = "Неможливо перетворити до числа";
+            //}
+
+            //else
+            //{
+            //    try
+            //    {
+            //        memory += Convert.ToInt32(textBox2.Text);//suma
+            //    }
+
+            //    catch (FormatException)
+            //    {
+            //        memory += 0;
+            //    }
+            //}
         }
 
         private void buttonMC_Click(object sender, EventArgs e)
@@ -158,8 +186,14 @@ namespace Calc
         private void buttonSum_Click(object sender, EventArgs e)
         {
             AnalaizerClass.expression = textBox1.Text;
-
             textBox2.Text = AnalaizerClass.Estimate();
+            AnalaizerClass.ShowMessage = true;
+            AnalaizerClass.expression = "";
+            AnalaizerClass.erposition = 0;
+
+            //AnalaizerClass.expression = textBox1.Text;
+
+            //textBox2.Text = AnalaizerClass.Estimate();
         }
     }
 }

@@ -28,7 +28,7 @@ namespace ClassAnalaizer
                 if (expr == '(')
                 {
                     ++Count;
-                    if (Count > 9)
+                    if (Count > 0)
                     {
                         ShowMessage = false;
                         expression = "Error 01";
