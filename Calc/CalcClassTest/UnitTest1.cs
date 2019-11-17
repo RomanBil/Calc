@@ -44,13 +44,13 @@ namespace CalcClassTest
         [TestMethod]
         public void TestMethodABS()
         {
-            Assert.AreEqual(6.0, CalcClass.ABS(2));
+            Assert.AreEqual((decimal)2.0, CalcClass.ABS(2));
         }
 
         [TestMethod]
         public void TestMethodABSI()
         {
-            Assert.AreEqual(6.0, CalcClass.IABS(3));
+            Assert.AreEqual((decimal)-3.0, CalcClass.IABS(3));
         }
 
 
