@@ -1,5 +1,5 @@
 ﻿using System;
-using CalcClass;
+using ClassCalc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CalcClassTest
@@ -10,47 +10,47 @@ namespace CalcClassTest
         [TestMethod]
         public void TestMethodAdd()
         {                      
-            Assert.AreEqual(0, CalcClas.Add(2, 2147483649));
+            Assert.AreEqual(0, CalcClass.Add(2, 2147483649));
         }
 
 
         [TestMethod]
         public void TestMethodSub()
         {
-            Assert.AreEqual(6.0, CalcClas.Sub(9, 3));
+            Assert.AreEqual((decimal)6.0, CalcClass.Sub(9, 3));
         }
 
 
         [TestMethod]
         public void TestMethodMult()
         {
-            Assert.AreEqual(6.0, CalcClas.Mult(2, 3));
+            Assert.AreEqual((decimal)6.0, CalcClass.Mult(2, 3));
         }
 
 
         [TestMethod]
         public void TestMethodDiv()
         {
-            Assert.AreEqual(4.0, CalcClas.Div(12, 3));
+            Assert.AreEqual((decimal)4.0, CalcClass.Div(12, 3));
         }
 
 
         [TestMethod]
         public void TestMethodMod()
         {
-            Assert.AreEqual(1.0, CalcClas.Mod(5, 2));
+            Assert.AreEqual((decimal)1.0, CalcClass.Mod(5, 2));
         }
 
         [TestMethod]
         public void TestMethodABS()
         {
-            Assert.AreEqual(6.0, CalcClas.ABS(2));
+            Assert.AreEqual(6.0, CalcClass.ABS(2));
         }
 
         [TestMethod]
         public void TestMethodABSI()
         {
-            Assert.AreEqual(6.0, CalcClas.IABS(3));
+            Assert.AreEqual(6.0, CalcClass.IABS(3));
         }
 
 

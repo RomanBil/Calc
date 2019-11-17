@@ -80,5 +80,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnalaizerClass\ClassAnalaizer.csproj">
+      <Project>{6013bbb5-c880-4e00-a29c-e02ab04895be}</Project>
+      <Name>ClassAnalaizer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

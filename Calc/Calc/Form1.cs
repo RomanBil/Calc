@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassAnalaizer;
 
 namespace Calc
 {
@@ -70,9 +71,16 @@ namespace Calc
 
                 if (test == null)
                 {
-                    textBox1.Text = str;
+                    //textBox1.Text = str;
 
-                    //=
+                    for (int i = 0; i < str.Length - 1; i++)
+                    {
+                        textBox1.Text += str[i];
+                    }
+
+                    AnalaizerClass.expression = textBox1.Text;
+
+                    textBox2.Text = AnalaizerClass.Estimate();
                 }
             }
 
@@ -141,7 +149,9 @@ namespace Calc
 
         private void buttonSum_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "test";
+            AnalaizerClass.expression = textBox1.Text;
+
+            textBox2.Text = AnalaizerClass.Estimate();
         }
     }
 }

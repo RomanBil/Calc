@@ -1,5 +1,5 @@
 ﻿using System;
-using AnalaizerClass;
+using ClassAnalaizer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnalaizerClassTest
@@ -10,9 +10,9 @@ namespace AnalaizerClassTest
         [TestMethod]
         public void TestCheckCurrency()
         {
-            analaizerClass.expression = "(2+2(2+3))";
+            AnalaizerClass.expression = "(2+2(2+3))";
 
-            Assert.AreEqual(true, analaizerClass.CheckCurrency());
+            Assert.AreEqual(true, AnalaizerClass.CheckCurrency());
 
             ///Assert.AreEqual(5, analaizerClass.Erposition);
         }
