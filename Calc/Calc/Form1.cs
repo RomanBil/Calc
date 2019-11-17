@@ -133,7 +133,15 @@ namespace Calc
 
             else
             {
-                memory += Convert.ToInt32(textBox2.Text);//suma
+                try
+                {
+                    memory += Convert.ToInt32(textBox2.Text);//suma
+                }
+
+                catch (FormatException)
+                {
+                    memory += 0;
+                }
             }
         }
 
