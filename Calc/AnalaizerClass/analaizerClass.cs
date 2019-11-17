@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Calc;
-//using CalcClass;
+using ClassCalc;
 
-namespace Analaizer
+namespace ClassAnalaizer
 {
     public class AnalaizerClass
     {

@@ -41,13 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="analaizerClass.cs" />
+    <Compile Include="AnalaizerClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CalcClass\CalcClass.csproj">
+    <ProjectReference Include="..\CalcClass\ClassCalc.csproj">
       <Project>{bbdde9ec-c2d4-4121-bf7e-29050aad0e68}</Project>
-      <Name>CalcClass</Name>
+      <Name>ClassCalc</Name>
     </ProjectReference>
     <ProjectReference Include="..\Calc\Calc.csproj">
       <Project>{6a1cb24a-ff00-4e72-8808-42895306c9c8}</Project>

@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "Calc\Calc.csproj", "{6A1CB24A-FF00-4E72-8808-42895306C9C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcClass", "CalcClass\CalcClass.csproj", "{BBDDE9EC-C2D4-4121-BF7E-29050AAD0E68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassCalc", "CalcClass\ClassCalc.csproj", "{BBDDE9EC-C2D4-4121-BF7E-29050AAD0E68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcClassTest", "CalcClassTest\CalcClassTest.csproj", "{E41660C7-C4AF-445D-97F3-333E5D01053F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalaizerClass", "AnalaizerClass\AnalaizerClass.csproj", "{6013BBB5-C880-4E00-A29C-E02AB04895BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassAnalaizer", "AnalaizerClass\ClassAnalaizer.csproj", "{6013BBB5-C880-4E00-A29C-E02AB04895BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalaizerClassTest", "AnalaizerClassTest\AnalaizerClassTest.csproj", "{2714C2D4-6FE5-4D42-BA2B-B4539E6B5C28}"
 EndProject
