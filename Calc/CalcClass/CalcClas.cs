@@ -2,237 +2,112 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace CalcClass
+namespace Calc
 {
-    public class CalcClas
+    public class CalcClass
     {
-
-        private static int CheckError09(long res)
+        public static bool isError = false;
+        public static string _lastError = "";
+        public static decimal Add(decimal a, decimal b)
         {
-            if (res == 0) 
+            if (IsError06("+", a, b))
             {
-                lastError = "Error 09";
-                return -1;
+                _lastError = "Error 06";
+                isError = true;
+                return 0;
             }
-
-            return 1;
+            return a + b;
         }
-
-
-
-        private static int CheckError06(long res)
+        public static decimal Sub(decimal a, decimal b)
         {
-            if (-2147483648 < res || res > 2147483647)
+            if (IsError06("-", a, b))
             {
-                lastError = "Error 06";
-                return -1;
+                _lastError = "Error 06";
+                isError = true;
+                return 0;
             }
-
-            return 1;
+            return a - b;
         }
-
-        /// <summary> 
-        /// Функція складання числа а і b 
-        /// </summary> 
-        /// <param name="a">доданок</param> 
-        /// <param name="b">доданок</param> 
-        /// <returns>сума</returns> 
-        public static int Add(long a, long b)
+        public static decimal Mult(decimal a, decimal b)
         {
-            if (CheckError06(a) == -1)
+            if (IsError06("*", a, b))
             {
-                return -1;
+                _lastError = "Error 06";
+                isError = true;
+                return 0;
             }
-
-            if (CheckError06(b) == -1)
-            {
-                return -1;
-            }
-
-            long res = (a + b);
-
-            if (CheckError06(res) == -1)
-            {
-                return -1;
-            }
-
-            return (int)res;
+            return a * b;
         }
-
-        /// <summary> 
-        /// функція віднімання чисел а і b 
-        /// </summary> 
-        /// <param name="a">зменшуване</param> 
-        /// <param name="b">від’ємне</param> 
-        /// <returns>різниця</returns> 
-        public static int Sub(long a, long b)
+        public static decimal Div(decimal a, decimal b)
         {
-            if (CheckError06(a) == -1)
+            if (b == 0)
             {
-                return -1;
+                _lastError = "Error 09";
+                isError = true;
+                return 0;
             }
-
-            if (CheckError06(b) == -1)
+            if (IsError06("/", a, b))
             {
-                return -1;
+                _lastError = "Error 06";
+                isError = true;
+                return 0;
             }
-
-            long res = (a - b);
-
-            if (CheckError06(res) == -1)
-            {
-                return -1;
-            }
-
-            return (int)res;
+            return a / b;
         }
-
-
-        /// <summary> 
-        /// функція множення чисел а і b 
-        /// </summary> 
-        /// <param name="a">множник</param> 
-        /// <param name="b">множник</param> 
-        /// <returns>добуток</returns> 
-        public static int Mult(long a, long b)
+        public static decimal Mod(decimal a, decimal b)
         {
-            if (CheckError06(a) == -1)
+            if (b == 0)
             {
-                return -1;
+                _lastError = "Error 09";
+                isError = true;
+                return 0;
             }
-
-            if (CheckError06(b) == -1)
+            if (IsError06("%", a, b))
             {
-                return -1;
+                _lastError = "Error 06";
+                isError = true;
+                return 0;
             }
-
-            long res = (a * b);
-
-            if (CheckError06(res) == -1)
-            {
-                return -1;
-            }
-
-            return (int)res;
+            return a % b;
         }
-
-        /// <summary> 
-        /// функція знаходження частки 
-        /// </summary> 
-        /// <param name="a">ділене</param> 
-        /// <param name="b">дільник</param> 
-        /// <returns>частка</returns> 
-        public static int Div(long a, long b)
+        public static decimal ABS(decimal a)
         {
-            if (CheckError09(b) == -1)
+            if (IsError06("", a, null))
             {
-                return -1;
+                _lastError = "Error 06";
+                isError = true;
+                return 0;
             }
-
-
-
-            if (CheckError06(a) == -1)
-            {
-                return -1;
-            }
-
-            if (CheckError06(b) == -1)
-            {
-                return -1;
-            }
-
-            long res = (a / b);
-
-            if (CheckError06(res) == -1)
-            {
-                return -1;
-            }
-
-            return (int)res;
+            return Math.Abs(a);
         }
-
-        /// <summary> 
-        /// функція ділення по модулю 
-        /// </summary> 
-        /// <param name="a">ділене</param> 
-        /// <param name="b">дільник</param> 
-        /// <returns>остача</returns> 
-        public static long Mod(long a, long b)
+        public static decimal IABS(decimal a)
         {
-            if (CheckError09(b) == -1)
+            if (IsError06("", a, null))
             {
-                return -1;
+                _lastError = "Error 06";
+                isError = true;
+                return 0;
             }
-
-            if (CheckError06(a) == -1)
-            {
-                return -1;
-            }
-
-            if (CheckError06(b) == -1)
-            {
-                return -1;
-            }
-
-            long res = (a % b);
-
-            if (CheckError06(res) == -1)
-            {
-                return -1;
-            }
-
-            return (int)res;
+            return -a;
         }
-
-
-        /// <summary> 
-        /// унарний плюс  
-        /// </summary> 
-        /// <param name="a"></param> 
-        /// <returns></returns> 
-        public static int ABS(long a)
+        private static bool IsError06(string s, decimal a, decimal? b)
         {
-            if (CheckError06(a) == -1)
+            if (b != null)
             {
-                return -1;
+                switch (s)
+                {
+                    case "+": return (a < -2147483648 || a > 2147483647 || b < -2147483648 || b > 2147483647 || (a + b) < -2147483648 || (a + b) > 2147483647);
+                    case "-": return (a < -2147483648 || a > 2147483647 || b < -2147483648 || b > 2147483647 || (a - b) < -2147483648 || (a - b) > 2147483647);
+                    case "*": return (a < -2147483648 || a > 2147483647 || b < -2147483648 || b > 2147483647 || (a * b) < -2147483648 || (a * b) > 2147483647);
+                    case "/": return (a < -2147483648 || a > 2147483647 || b < -2147483648 || b > 2147483647 || (a / b) < -2147483648 || (a / b) > 2147483647);
+                    default: return (a < -2147483648 || a > 2147483647 || b < -2147483648 || b > 2147483647 || (a % b) < -2147483648 || (a % b) > 2147483647);
+                }
             }
-            return (int)a*-1;
-        }
-
-        /// <summary> 
-        /// унарний мінус  
-        /// </summary> 
-        /// <param name="a"></param> 
-        /// <returns></returns> 
-        public static int IABS(long a)
-        {
-            if (CheckError06(a) == -1)
+            else
             {
-                return -1;
+                return (a < -2147483648 || a > 2147483647);
             }
-            return (int)a * -1;
         }
-
-
-        ////Використовується також глобальна змінна: 
-        /// <summary> 
-        /// Останнє повідомлення про помилку. 
-        /// Поле і властивість для нього 
-        /// </summary> 
-        private static string _lastError = "";
-
-        ///public static string lastError
-
-        public static string lastError
-        {
-            get { return _lastError; }
-
-            set { _lastError = value; }
-        }
-
-       
-
     }
 }

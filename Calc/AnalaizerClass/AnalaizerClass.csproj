@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CalcClass">
-      <HintPath>..\CalcClass\bin\Debug\CalcClass.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +43,16 @@
   <ItemGroup>
     <Compile Include="analaizerClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalcClass\CalcClass.csproj">
+      <Project>{bbdde9ec-c2d4-4121-bf7e-29050aad0e68}</Project>
+      <Name>CalcClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calc\Calc.csproj">
+      <Project>{6a1cb24a-ff00-4e72-8808-42895306c9c8}</Project>
+      <Name>Calc</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
