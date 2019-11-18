@@ -403,7 +403,7 @@ namespace ClassAnalaizer
         {
             InputExpression = new System.Collections.ArrayList();
         }
-        public static void CreateStack()
+        public static System.Collections.ArrayList CreateStack()
         {
             InputExpression = new System.Collections.ArrayList();
             string[] IE1 = expression.Split(' ');
@@ -412,7 +412,7 @@ namespace ClassAnalaizer
             {
                 expression = "Error 08";
                 ShowMessage = false;
-                return;
+                return null;
             }
             string expression1 = expression.Replace("(", "( ");
             expression1 = expression1.Replace(")", " )");
@@ -545,6 +545,8 @@ namespace ClassAnalaizer
                 result.Add(listSteck[i].value);
             }
             InputExpression = result;
+
+            return InputExpression;
         }
         public static string RunEstimate()
         {
