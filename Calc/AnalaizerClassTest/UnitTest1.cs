@@ -22,6 +22,7 @@ namespace AnalaizerClassTest
         {
             AnalaizerClass.expression = "6*5";
 
+
             Assert.AreEqual("6 * 5", AnalaizerClass.Format());
         }
 
