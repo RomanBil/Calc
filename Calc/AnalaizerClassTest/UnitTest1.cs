@@ -26,13 +26,17 @@ namespace AnalaizerClassTest
             Assert.AreEqual("6 * 5", AnalaizerClass.Format());
         }
 
-        //[TestMethod]
-        //public void TestCreateStack()
-        //{
-        //    AnalaizerClass.expression = 
+        [TestMethod]
+        public void TestCreateStack()
+        {
+            AnalaizerClass.expression = "2+2";
 
-        //    Assert.AreEqual(, AnalaizerClass.CreateStack());
-        //}
+            System.Collections.ArrayList arrayList = new System.Collections.ArrayList();
+
+            arrayList.Add("2+2");
+
+            Assert.AreEqual(arrayList, AnalaizerClass.CreateStack());
+        }
 
         [TestMethod]
         public void TestRunEstimate()
