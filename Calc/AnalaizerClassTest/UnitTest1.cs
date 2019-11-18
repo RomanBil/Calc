@@ -16,5 +16,37 @@ namespace AnalaizerClassTest
 
             ///Assert.AreEqual(5, analaizerClass.Erposition);
         }
+
+        [TestMethod]
+        public void TestFormat()
+        {
+            AnalaizerClass.expression = "6*5";
+
+            Assert.AreEqual("6 * 5", AnalaizerClass.Format());
+        }
+
+        //[TestMethod]
+        //public void TestCreateStack()
+        //{
+        //    AnalaizerClass.expression = 
+
+        //    Assert.AreEqual(, AnalaizerClass.CreateStack());
+        //}
+
+        [TestMethod]
+        public void TestRunEstimate()
+        {
+            AnalaizerClass.expression = "6*5";
+
+            Assert.AreEqual("30", AnalaizerClass.RunEstimate());
+        }
+
+        [TestMethod]
+        public void TestEstimate()
+        {
+            AnalaizerClass.expression = "6*5";
+
+            Assert.AreEqual("30", AnalaizerClass.Estimate());
+        }
     }
 }
